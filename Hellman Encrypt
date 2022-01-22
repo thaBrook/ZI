@@ -1,0 +1,24 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+    long long int alicerand = 0, alice = 0, bob = 0, bobrand = 0, x = 5, p = 23, eva1 = 0, eva2 = 0;
+
+    cout << "alise random number" << endl;
+    cin >> alicerand;
+    alice = pow(x, alicerand);
+    alice = alice % p;
+    cout << "number send to bob --- " << alice << endl << "bob random number" << endl;
+    cin >> bobrand;
+    bob = pow(x, bobrand);
+    bob = bob % p;
+    cout << "numder send to alise --- " << bob << endl;
+    alicerand = pow(bob, alicerand);
+    bobrand = pow(alice, bobrand);
+    alicerand = alicerand % p;
+    bobrand = bobrand % p;
+    eva1 = alice;
+    eva2 = bob; 
+    cout << "key alise -- " << alicerand << endl << "key bob -- " << bobrand << endl <<"eva got:" << eva1 << " and " << eva2 << endl; 
+}
